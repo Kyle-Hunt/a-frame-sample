@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-  </head>
-  <body>
-    <a-scene>
-      <!-- A few lines to set up the camera -->
-      <a-entity id="cameraWrapper" position="0 0 6">
-        <a-camera></a-camera>
-      </a-entity>
 
-      <!--    Code your scene here:    -->
-      <a-sphere position="0 1.25 0" radius="1.25" src="#snow"></a-sphere>
-      <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#BDCFE7"></a-plane>
-      <a-sky color="aliceblue"></a-sky>
-    </a-scene>
-  </body>
+<head>
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+</head>
+
+<body>
+  <!--change-height-->
+  <a-scene>
+    <!-- A few lines to set up the camera -->
+    <a-entity id="camera" position="0 0 0">
+      <a-camera reset kinematic-body universal-controls wasd-controls="acceleration: 1000">
+        <a-cursor></a-cursor>
+      </a-camera>
+    </a-entity>
+
+    <!--    Code your scene here:    -->
+    <a-entity id="container">
+      <a-plane id="right" color="#bbc3cc" height="100" width="100" position="0 0 0" rotation="-90 0 0"></a-plane>
+    </a-entity>
+    
+    <a-cylinder position="10 2 20" color="gray" height="4" radius="4" src="images/chesh-fur.jpg"></a-cylinder>
+    <a-cylinder position="-10 2 20" color="gray" height="4" radius="4" src="images/chesh-fur.jpg"></a-cylinder>
+    <a-cylinder position="-10 2 -20" color="gray" height="4" radius="4" src="images/chesh-fur.jpg"></a-cylinder>
+    <a-cylinder position="10 2 -20" color="gray" height="4" radius="4" src="images/chesh-fur.jpg"></a-cylinder>
+    
+    <a-cylinder position="10 14 20" color="gray" height="20" radius="3" src="images/chesh-fur.jpg"></a-cylinder>
+    <a-cylinder position="-10 14 20" color="gray" height="20" radius="3" src="images/chesh-fur.jpg"></a-cylinder>
+    <a-cylinder position="-10 14 -20" color="gray" height="20" radius="3" src="images/chesh-fur.jpg"></a-cylinder>
+    <a-cylinder position="10 14 -20" color="gray" height="20" radius="3" src="images/chesh-fur.jpg"></a-cylinder>
+    
+    <a-cylinder position="0 34 0" color="gray" height="20" radius="18" scale="1 1 2" src="images/chesh-fur.jpg"></a-cylinder>
+    
+    <a-cylinder position="0 46 49" color="gray" height="50" radius="6" rotation="45 0 0" src="images/chesh-fur.jpg"></a-cylinder>
+    <a-cylinder position="0 22 -49" color="gray" height="50" radius="6" rotation="45 0 0" src="images/chesh-fur.jpg"></a-cylinder>
+    
+    <a-cylinder position="0 70 65" color="gray" height="20" radius="10" src="images/chesh-fur.jpg"></a-cylinder>
+    <!--<a-cylinder position="1.5 32.5 27" height="1" radius="0.5" rotation="90" scale="3 1 1" src="images/eye.jpg"></a-cylinder>-->
+    <!--<a-cylinder position="-1.5 32.5 27" height="1" radius="0.5" rotation="90" scale="3 1 1" src="images/eye.jpg">-->
+  </a-scene>
+  <script src="script.js"></script>
+
+</body>
+
 </html>
